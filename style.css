@@ -573,3 +573,45 @@ html, body {
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+/* Mobiles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(to right, #001f54, #00c6ff);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.nav-links {
+  gap: 15px; /* spacing between links */
+}
+
+.nav-links a,
+.nav-links button {
+  display: block;       /* stack links vertically */
+  margin: 10px 0;       /* vertical spacing */
+  padding: 10px 15px;   /* padding for touch-friendly buttons */
+  width: 100%;          /* take full width */
+  text-align: center;
+}
+
+.nav-links button {
+  box-sizing: border-box;
+}
+.nav-links {
+  max-height: calc(100vh - 60px); /* avoid overflow */
+  overflow-y: auto;
+}
+ 
