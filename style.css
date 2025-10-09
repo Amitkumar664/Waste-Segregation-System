@@ -471,4 +471,105 @@
   cursor: pointer;
   transition: 0.3s;
 }
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
+.why-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.why-section li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.why-section li::before {
+  content: "♻️"; /* custom emoji instead of dot */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* info  */
+/* Info Box */
+.info-box {
+  display: none; /* hidden until a button is clicked */
+  width: 90%;
+  background: #f9f9f9;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin: 1.5rem auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+/* Image inside info box */
+.info-box img {
+  width: 40%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Text area */
+.info-text {
+  width: 60%;
+}
+
+.info-text h3 {
+  color: #001f54;
+  margin-bottom: 0.5rem;
+}
+
+.info-text ul {
+  list-style-type: "✔️ ";
+  margin-left: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-box img {
+    width: 80%;
+  }
+
+  .info-text {
+    width: 100%;
+  }
+}
+
+.info-box {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.info-box.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+.info-box {
+  display: flex; /* instead of none */
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
